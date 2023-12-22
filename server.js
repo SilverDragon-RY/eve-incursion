@@ -1,7 +1,10 @@
 // vars
-const port = 3000;
+const port = 80;
 const express = require('express');
 const app = express(); 
+const cors = require('cors');
+
+app.use(cors());
 
 // API
 app.use("/js", express.static(__dirname + '/js'));
@@ -9,11 +12,13 @@ app.use("/img", express.static(__dirname + '/img'));
 app.use("/css", express.static(__dirname + '/css'));
 
 app.get('/api', function (req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
     res.json(status);
 }); 
 
 app.get('/', function (req, res) {
     res.set('Cache-control', 'public, max-age=3000');
+    res.set('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname+ "/view/waitlist.html");
 }); 
 
@@ -275,5 +280,5 @@ function update_all() {
         }
     });
 };
-
+update_all();
 setInterval(update_all, 60000);
