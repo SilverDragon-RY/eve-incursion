@@ -1,5 +1,5 @@
 // Community status API
-const api = "http://eve-incursion.com/api";
+const api = "https://eve-incursion.com/api";
 const sentences = ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Running: Waitlist Opened!"];
 const colors = ["w3-sand", "bg-danger bg-gradient bg-opacity-50", "bg-success bg-gradient bg-opacity-75"];
 const order = ["TLA", "CI", "TDF", "WTM"];

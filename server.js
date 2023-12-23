@@ -1,5 +1,5 @@
 // vars
-const port = 80;
+const port = 443;
 const express = require('express');
 const cors = require('cors');
 const https = require("https");
@@ -8,13 +8,15 @@ const fs = require(`fs`);
 // app
 const app = express();
 app.use(cors());
-var options = {
-    key: fs.readFileSync('./keys/client-key.pem'),
-    cert: fs.readFileSync('./keys/client-cert.pem')
-}
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/eve-incursion.com-0001/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/eve-incursion.com-0001/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/eve-incursion.com-0001/chain.pem', 'utf8');
 
-// server
-var https_Server = https.createServer(options, app);
+const options = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
 
 
 // API
@@ -59,7 +61,10 @@ app.get('/lp', function (req, res) {
 }); 
 
 // Setting the server to listen at port 3000 
-https_Server.listen(port)
+var https_Server = https.createServer(options, app);
+https_Server.listen(port, () => {
+	console.log('HTTPS Server running on port', port);
+});
 
 
 // token set up
