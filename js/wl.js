@@ -1,6 +1,6 @@
 // Community status API
 const api = "http://eve-incursion.com/api";
-const sentences = ["Unavailable: Technical Issue Encountered...", "Not running: Waitlist Closed :<", "Running: Waitlist Opened!"];
+const sentences = ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Running: Waitlist Opened!"];
 const colors = ["w3-sand", "bg-danger bg-gradient bg-opacity-50", "bg-success bg-gradient bg-opacity-75"];
 const order = ["TLA", "CI", "TDF", "WTM"];
 
@@ -29,7 +29,7 @@ fetch(api).then(response => response.json()).then(data => {
         }
         if (data[order[i]] > 0) {
             running_for = (Date.now() / 1000 | 0) - data[order[i]];
-            new_state[i] = "WL open: running for " + String(running_for / 60 | 0) + " mins";
+            new_state[i] = "Waitlist Open: Running for " + String(running_for / 60 | 0) + " Minutes";
             new_color[i] = colors[2];
         }
     }
