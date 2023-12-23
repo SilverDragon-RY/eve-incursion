@@ -1,10 +1,21 @@
 // vars
 const port = 80;
 const express = require('express');
-const app = express(); 
 const cors = require('cors');
+const https = require("https");
+const fs = require(`fs`);
 
+// app
+const app = express();
 app.use(cors());
+var options = {
+    key: fs.readFileSync('./keys/client-key.pem'),
+    cert: fs.readFileSync('./keys/client-cert.pem')
+}
+
+// server
+var https_Server = https.createServer(options, app);
+
 
 // API
 app.use("/js", express.static(__dirname + '/js'));
@@ -48,9 +59,7 @@ app.get('/lp', function (req, res) {
 }); 
 
 // Setting the server to listen at port 3000 
-app.listen(port, function (req, res) {
-    console.log("Server is running at port", port);
-}); 
+https_Server.listen(port)
 
 
 // token set up
