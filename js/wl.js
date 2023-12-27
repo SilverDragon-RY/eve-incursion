@@ -1,4 +1,8 @@
 // app
+const sentences = ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
+const colors = ["w3-sand", "bg-danger bg-gradient bg-opacity-50", "bg-success bg-gradient bg-opacity-75"];
+const order = ["TLA", "CI", "TDF", "WTM"];
+
 var app = new Vue({
     el: '#waitlists',
     data: {
@@ -28,10 +32,6 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 // pre-page cookie setting
-const sentences = ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
-const colors = ["w3-sand", "bg-danger bg-gradient bg-opacity-50", "bg-success bg-gradient bg-opacity-75"];
-const order = ["TLA", "CI", "TDF", "WTM"];
-
 // change page based on cookie...
 function changeLanguage() {
     let get_language_cookie = getCookie("Language");
