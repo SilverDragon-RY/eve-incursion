@@ -78,8 +78,8 @@ document.getElementById("language").onchange = function () {
 }
 
 // Get from api
+sentences = changeLanguage();
 fetch(api).then(response => response.json()).then(data => {
-    sentences = changeLanguage();
     new_state = [0, 0, 0, 0];
     new_color = [0, 0, 0, 0];
     for (let i = 0; i < order.length; i++) {
