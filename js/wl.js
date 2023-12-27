@@ -46,11 +46,13 @@ function changeLanguage() {
         // trigger update -> ENG 
         eng_ver.hidden = false;
         cn_ver.hidden = true;
+        document.getElementById('language').value=get_language_cookie;
         return ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
     } else if (get_language_cookie == "CN") {
         // trigger update -> CN
         eng_ver.hidden = true;
         cn_ver.hidden = false;
+        document.getElementById('language').value=get_language_cookie;
         return ["出错了...", "没起队", "开队了，已经打了 ", "分钟"];
     }
 }
