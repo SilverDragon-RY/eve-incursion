@@ -50,7 +50,7 @@ function changeLanguage() {
 }
 // bind update function...
 document.getElementById("language").onchange = function () {
-    let sentences = changeLanguage();
+    sentences = changeLanguage();
     // Get from api
     fetch(api).then(response => response.json()).then(data => {
         new_state = [0, 0, 0, 0]
@@ -78,7 +78,7 @@ document.getElementById("language").onchange = function () {
 }
 
 // Get from api
-let sentences = changeLanguage();
+sentences = changeLanguage();
 fetch(api).then(response => response.json()).then(data => {
     new_state = [0, 0, 0, 0];
     new_color = [0, 0, 0, 0];
