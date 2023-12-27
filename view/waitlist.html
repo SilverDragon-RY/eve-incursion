@@ -39,16 +39,17 @@
             </li>
         </ul>
     </div>
+
 </nav>
 
 <div class="container mt-4">
     <!-- Content for the Monitor page -->
     <div id="waitlists">
-        <div class="container">
+        <div class="container" id="ENG">
             <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
-                    <div class="card d-flex" style="width: 18rem;"  v-bind:class="color[0]">
-                        <img src="img/1TLA_LOGO.png" class="card-img-top align-middle"  alt="...">
+                    <div class="card d-flex" style="width: 18rem;" v-bind:class="color[0]">
+                        <img src="img/1TLA_LOGO.png" class="card-img-top align-middle" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">TLA</h5>
                             <p class="card-text">{{state[0]}} </p>
@@ -58,20 +59,20 @@
                 </div>
                 <div class="col-lg-4 d-flex align-items-stretch">
                     <div class="card d-flex" style="width: 18rem;" v-bind:class="color[1]">
-                        <img src="img/2CI_LOGO.png" class="card-img-top"  alt="...">
+                        <img src="img/2CI_LOGO.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Contingency</h5>
-                            <p class="card-text" >{{state[1]}}</p>
+                            <p class="card-text">{{state[1]}}</p>
                             <a href="https://contingencyinc.com/?wl=1" class="btn btn-primary">Jump to waitlist</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex align-items-stretch">
                     <div class="card d-flex" style="width: 18rem;" v-bind:class="color[2]">
-                        <img src="img/3TDF_LOGO.png" class="card-img-top"  alt="...">
+                        <img src="img/3TDF_LOGO.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">TDF</h5>
-                            <p class="card-text" >{{state[2]}} </p>
+                            <p class="card-text">{{state[2]}} </p>
                             <a href="https://t-d-f.one/waitlist?wl=1" class="btn btn-primary">Jump to waitlist</a>
                         </div>
                     </div>
@@ -83,17 +84,17 @@
             <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
                     <div class="card d-flex" style="width: 18rem;" v-bind:class="color[3]">
-                        <img src="img/4WTM_LOGO.png" class="card-img-top"  alt="...">
+                        <img src="img/4WTM_LOGO.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">WTM</h5>
-                            <p class="card-text" >{{state[3] }} </p>
+                            <p class="card-text">{{state[3] }} </p>
                             <a href="https://wl.warptome.net/" class="btn btn-primary">Jump to waitlist</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex align-items-stretch">
-                    <div class="card d-flex w3-sand" style="width: 18rem;" >
-                        <img src="img/5NGA_LOGO.png" class="card-img-top"  alt="...">
+                    <div class="card d-flex w3-sand" style="width: 18rem;">
+                        <img src="img/5NGA_LOGO.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">NGA</h5>
                             <p class="card-text">Unavailable: No waitlist found for this. </p>
@@ -118,6 +119,81 @@
                 </div>
             </div>
         </div>
+        <!-- CN ver -->
+        <div class="container" id="CN">
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card d-flex" style="width: 18rem;" v-bind:class="color[0]">
+                        <img src="img/1TLA_LOGO.png" class="card-img-top align-middle" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">TLA</h5>
+                            <p class="card-text">{{state[0]}} </p>
+                            <a href="https://wl.tlaincursions.com/waitlist?wl=1" class="btn btn-primary">排队网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card d-flex" style="width: 18rem;" v-bind:class="color[1]">
+                        <img src="img/2CI_LOGO.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Contingency</h5>
+                            <p class="card-text">{{state[1]}}</p>
+                            <a href="https://contingencyinc.com/?wl=1" class="btn btn-primary">排队网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card d-flex" style="width: 18rem;" v-bind:class="color[2]">
+                        <img src="img/3TDF_LOGO.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">TDF</h5>
+                            <p class="card-text">{{state[2]}} </p>
+                            <a href="https://t-d-f.one/waitlist?wl=1" class="btn btn-primary">排队网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card d-flex" style="width: 18rem;" v-bind:class="color[3]">
+                        <img src="img/4WTM_LOGO.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">WTM</h5>
+                            <p class="card-text">{{state[3] }} </p>
+                            <a href="https://wl.warptome.net/" class="btn btn-primary">排队网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card d-flex w3-sand" style="width: 18rem;">
+                        <img src="img/5NGA_LOGO.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">NGA</h5>
+                            <p class="card-text">无法显示：这个社区没有排队网站。 </p>
+                            <a href="https://newgalaxyage.ru/about/team" class="btn btn-primary">排队网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card d-flex w3-sand" style="width: 18rem;">
+                        <img src="img/6RDS_LOGO.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">RDS</h5>
+                            <p class="card-text">无法显示：这个社区没有排队网站。 </p>
+                            <a href="#" class="btn btn-primary">排队网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <h6> Statuses are based on community waitlist websites and are refreshed every 1 minutes... </h6>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -126,7 +202,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="../js/wl.js"></script>
+<script type="text/javascript" src="../js/language.js"></script>
 </body>
 </html>
