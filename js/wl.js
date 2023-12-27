@@ -49,7 +49,7 @@ function changeLanguage() {
     }
 }
 // bind update function...
-document.getElementById("language").onchange = function () {
+document.getElementById("language").addEventListener("onchange", function () {
     sentences = changeLanguage();
     // Get from api
     fetch(api).then(response => response.json()).then(data => {
@@ -75,7 +75,7 @@ document.getElementById("language").onchange = function () {
         app.state = new_state;
         app.color = new_color;
     });
-}
+});
 
 // Get from api
 sentences = changeLanguage();
