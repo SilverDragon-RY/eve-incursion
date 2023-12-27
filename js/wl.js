@@ -1,5 +1,5 @@
 // app
-const sentences = ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
+let sentences = ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
 const colors = ["w3-sand", "bg-danger bg-gradient bg-opacity-50", "bg-success bg-gradient bg-opacity-75"];
 const order = ["TLA", "CI", "TDF", "WTM"];
 
@@ -50,7 +50,7 @@ function changeLanguage() {
 }
 // bind update function...
 document.getElementById("language").onchange = function () {
-    sentences = changeLanguage();
+    let sentences = changeLanguage();
     // Get from api
     fetch(api).then(response => response.json()).then(data => {
         new_state = [0, 0, 0, 0]
@@ -78,7 +78,7 @@ document.getElementById("language").onchange = function () {
 }
 
 // Get from api
-sentences = changeLanguage();
+let sentences = changeLanguage();
 fetch(api).then(response => response.json()).then(data => {
     new_state = [0, 0, 0, 0];
     new_color = [0, 0, 0, 0];
