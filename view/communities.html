@@ -13,38 +13,43 @@
 <body class="bg-dark p-2 text-dark bg-opacity-25">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- logo -->
-    <a class="navbar-brand" href="/secret"><img src="img/logo.png" width="30" height="30"/></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- link -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Waitlists</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="communities">Communities</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="guides">Guides</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="support">Starter/Upgrade-Support</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="lp">LP Trade</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- logo -->
+        <a class="navbar-brand" href="/secret"><img src="img/logo.png" width="30" height="30" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- link -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Waitlists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="communities">Communities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guides">Guides</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="support">Starter/Upgrade-Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lp">LP Trade</a>
+                </li>
+            </ul>
+        </div>
+        <!-- language selector -->
+        <select class="selectpicker d-flex p-2 bg-light" data-width="fit" id="language">
+            <option class="bg-light" value="ENG">English</option>
+            <option class="bg-light" value="CN">中文</option>
+        </select>
+    </nav>
 
 <div class="container mt-4">
     <!-- Content for the Monitor page -->
     <div id="focus">
-        <div class="container">
+        <div class="container" id="ENG">
             <div row>
                 <h4>Different Communities have different basic requirement, upgrade requirement, SRP policy, efficiency, logi requirement, etc. This is just basic info.</h4>
                 <h4>Our guide page have more info for those communities, and integrated guide for them.</h4>
@@ -109,6 +114,71 @@
                 </div>
             </div>
         </div>
+        <div class="container" id="CN" hidden>
+            <div row>
+                <h4>Different Communities have different basic requirement, upgrade requirement, SRP policy, efficiency, logi requirement, etc. This is just basic info.</h4>
+                <h4>Our guide page have more info for those communities, and integrated guide for them.</h4>
+            </div>
+            <div class="card mb-3 ">
+                <div class="card-header bg-success bg-gradient bg-opacity-25">TLA incursions  < Mixed Tank > </div>
+                <div class="card-body">
+                    <h6 class="card-title"><b>好好-Focused Community. Fast, efficient, elite.</b></h6>
+                    <p class="card-text">Fleet Setup: 2 Nestor 2 Loki + 1 Vindi(ddd) + Marauder </p>
+                    <p class="card-text">
+                    Insight: up-time focused, have the best isk/hr, mixed tank means you don't need to worry about which ship you have trained into. You need to be at least a marauder to join, and that's not finished, 
+                    after 24-hrs in fleet you will be tracked to upgrade into the DPS requirement. However if you met certain DPS you are guaranteed 2 spots when 
+                    available (your alt will have higher priority then people on waitlist). Effort will pay off! 
+                    </p>
+                    <a href="https://wl.tlaincursions.com/">TLA INCURSIONS</a>
+
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-warning bg-gradient bg-opacity-25">Contingency < Armor Tank > </div>
+                <div class="card-body">
+                    <h6 class="card-title"><b>Reborned from the old TOP, now the best beginner-friendly community.</b></h6>
+                    <p class="card-text">Fleet Setup: 3 Nestor + Oneiros + Limited Starters + Main Force (Marauder, Vindi, Nightmare)</p>
+                    <p class="card-text">
+                    Currently the best community for beginners to join and build experience and stash. They have patient FC, walk you through your first fleet, tagging targets for each sites, and 
+                    designed scheme for both your character, your ships and your mind. No matter which kind of specialist you wanna train into, there's sufficient help around.
+                    </p>
+                    <a href="https://contingencyinc.com/fits">Contingency Incursion</a>
+
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-warning bg-gradient bg-opacity-25">TDF - The Ditanian Fleet < Armor Tank > </div>
+                <div class="card-body">
+                    <h6 class="card-title"><b>The eldest community among all, also beginner friendly.</b></h6>
+                    <p class="card-text">Fleet Setup: 3 Nestor + Oneiros + Mixed Ships (Megathron, NApoc, Vindi, Nightmare, Marauder)</p>
+                    <p class="card-text">
+                        The eldest community among all. They have experienced fc to point out your mistakes and save you from death, also tagging every sites so you know what to shoot.
+                        They also fleet regularly, is a good place to make isk and gain experience.
+                    </p>
+                    <a href="https://t-d-f.one/">The Ditanian Fleet</a>
+
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-info bg-gradient bg-opacity-25">WTM - Warp to Me Incursion < Shield Tank > </div>
+                <div class="card-body">
+                    <h6 class="card-title"><b>Shield Tank Only. Have full upgrade route as well. </b></h6>
+                    <p class="card-text">Fleet Setup: Loki + Marauder + Vindicator + Nightmare + Lesser Battleships(Machariel, Tempest, etc.)</p>
+                    <p class="card-text">To be filled by WTM fc.</p>
+                    <a href="https://wl.warptome.net/">Warp to Me</a>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-success bg-gradient bg-opacity-25">NGA - New Galaxy Age < Mixed Tank > </div>
+                <div class="card-body">
+                    <h6 class="card-title"><b>Russian speaking community.</b></h6>
+                    <p class="card-text">Fleet Setup: Nestor + Loki/Scimi + all other possible ships</p>
+                    <p class="card-text">Well... I can't speak Russian... </p>
+                    <a href="https://newgalaxyage.ru/">New Galaxy Age</a>
+
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -117,6 +187,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/language.js"></script>
+
 
 </body>
 </html>
