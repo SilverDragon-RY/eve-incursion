@@ -79,8 +79,9 @@ document.getElementById("language").onchange = function () {
 
 // Get from api
 fetch(api).then(response => response.json()).then(data => {
-    new_state = [0, 0, 0, 0]
-    new_color = [0, 0, 0, 0]
+    sentences = changeLanguage();
+    new_state = [0, 0, 0, 0];
+    new_color = [0, 0, 0, 0];
     for (let i = 0; i < order.length; i++) {
         if (data[order[i]] == -1) {
             new_state[i] = sentences[0];
