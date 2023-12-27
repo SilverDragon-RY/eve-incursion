@@ -27,12 +27,14 @@ function changeLanguage() {
         // trigger update -> ENG 
         eng_ver.hidden = false;
         cn_ver.hidden = true;
+        document.getElementById('language').value=get_language_cookie;
     } else if (get_language_cookie == "CN") {
         // trigger update -> CN
         eng_ver.hidden = true;
         cn_ver.hidden = false;
+        document.getElementById('language').value=get_language_cookie;
     }
-    console.log("changed", get_language_cookie);
+    
 }
 
 // preload based on cookie
