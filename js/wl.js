@@ -32,51 +32,33 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 // pre-page cookie setting
-// change page based on cookie...
+// cookie update
 function changeLanguage() {
     let get_language_cookie = getCookie("Language");
     if (get_language_cookie == "") {
         // no cookie -> set cookie
         setCookie("Language", "ENG", 10);
         // trigger update
+        eng_ver.hidden = false;
+        cn_ver.hidden = true;
         return ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
     } else if (get_language_cookie == "ENG") {
         // trigger update -> ENG 
+        eng_ver.hidden = false;
+        cn_ver.hidden = true;
         return ["Unavailable: Technical Issue Encountered...", "Waitlist Closed: Not running :<", "Waitlist Open: Running for ", "Minutes"];
     } else if (get_language_cookie == "CN") {
         // trigger update -> CN
+        eng_ver.hidden = true;
+        cn_ver.hidden = false;
         return ["出错了...", "没起队", "开队了，已经打了 ", "分钟"];
     }
 }
-// bind update function...
-document.getElementById("language").addEventListener("onchange", function () {
-    sentences = changeLanguage();
-    // Get from api
-    fetch(api).then(response => response.json()).then(data => {
-        new_state = [0, 0, 0, 0]
-        new_color = [0, 0, 0, 0]
-        for (let i = 0; i < order.length; i++) {
-            if (data[order[i]] == -1) {
-                new_state[i] = sentences[0];
-                new_color[i] = colors[0];
-            }
-            if (data[order[i]] == 0) {
-                new_state[i] = sentences[1];
-                new_color[i] = colors[1];
-            }
-            if (data[order[i]] > 0) {
-                running_for = (Date.now() / 1000 | 0) - data[order[i]];
-                new_state[i] = sentences[2] + String(running_for / 60 | 0) + sentences[3];
-                new_color[i] = colors[2];
-            }
-        }
-        // update array
-        console.log(new_state);
-        app.state = new_state;
-        app.color = new_color;
-    });
-});
 
+// pre-load
+var eng_ver = document.getElementById("ENG");
+var cn_ver = document.getElementById("CN");
+sentences = changeLanguage();
 // Get from api
 sentences = changeLanguage();
 fetch(api).then(response => response.json()).then(data => {
@@ -103,3 +85,32 @@ fetch(api).then(response => response.json()).then(data => {
     app.color = new_color;
 });
 
+// bind switcher
+document.getElementById("language").onchange = function () {
+    setCookie("Language", this.value, 10);
+    sentences = changeLanguage();
+    // Get from api
+    fetch(api).then(response => response.json()).then(data => {
+        new_state = [0, 0, 0, 0]
+        new_color = [0, 0, 0, 0]
+        for (let i = 0; i < order.length; i++) {
+            if (data[order[i]] == -1) {
+                new_state[i] = sentences[0];
+                new_color[i] = colors[0];
+            }
+            if (data[order[i]] == 0) {
+                new_state[i] = sentences[1];
+                new_color[i] = colors[1];
+            }
+            if (data[order[i]] > 0) {
+                running_for = (Date.now() / 1000 | 0) - data[order[i]];
+                new_state[i] = sentences[2] + String(running_for / 60 | 0) + sentences[3];
+                new_color[i] = colors[2];
+            }
+        }
+        // update array
+        console.log(new_state);
+        app.state = new_state;
+        app.color = new_color;
+    });
+};
